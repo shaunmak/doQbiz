@@ -1,0 +1,155 @@
+﻿@model DMS.Models.Document
+
+    @{
+
+        Layout = "_Layout";
+
+
+    }
+
+
+<h2>Edit document  @Html.DisplayFor(model => model.DocumentNo) </h2>
+
+<div class="col-md-4">
+
+
+
+    <form asp-action="EditDocument" method="post">
+        <p>
+            <input type="hidden" asp-for="DocumentID" />
+        </p>
+
+        <table class="table w-100 table-striped table-hover table-reflow bg-dark mx-5" style="opacity: 0.5;">
+            <tr>
+
+                <td><label asp-for="DocumentTitle"> Title</label></td>
+                <td><input asp-for="DocumentTitle" type="text" /></td>
+
+            </tr>
+
+            <tr>
+
+                <td><label asp-for="CurrentRev"> Current Rev</label></td>
+                <td><input asp-for="CurrentRev" /></td>
+
+
+            </tr>
+
+            @*<tr>
+                    <td><label asp-for="DocFileName"> Upload Document</label></td>
+                    <td><input type="file"  asp-for="DocFileName"  /> </td>
+                </tr>
+
+                <tr>
+                    <td><label asp-for="PDFFileName"> Upload PDF</label></td>
+                    <td><input  type="file"  asp-for="PDFFileName"  /></td>
+                </tr>*@
+            <tr>
+                <td><label asp-for="IsCheckedOut"> Checked Out</label></td>
+                <td><input type="checkbox" asp-for="IsCheckedOut" /></td>
+            </tr>
+            <tr>
+                <td><label asp-for="CheckOutBy"> Checkout By</label></td>
+                <td><input asp-for="CheckOutBy" /></td>
+            </tr>
+
+            <tr>
+                <td><label asp-for="CheckOutDate"> Checkout Date</label></td>
+                <td><input size="4" type="text" readonly asp-for="CheckOutDate" class="form-control" id="CheckOutDate"></td>
+
+            </tr>
+
+            <tr>
+                <td><label asp-for="ReviewedBy"> Reviewed By</label></td>
+                <td><input asp-for="ReviewedBy" /></td>
+            </tr>
+
+            <tr>
+                @*<td><label asp-for="ReviewDate"> Reviewed Date</label></td>
+                    <td><input asp-for="ReviewDate" class="form-control" /></td>*@
+
+                <td><label asp-for="ReviewDate"> Reviewed Date</label></td>
+                <td><input size="4" type="text" readonly asp-for="ReviewDate" class="form-control" id="ReviewDate"></td>
+            </tr>
+
+            <tr>
+                <td><label asp-for="SignedOffBy"> SignOff By</label></td>
+                <td><input asp-for="SignedOffBy" /></td>
+            </tr>
+
+            <tr>
+                <td><label asp-for="SignoffDate"> SignOff Date</label></td>
+                <td><input size="4" type="text" readonly asp-for="SignoffDate" class="form-control" id="SignoffDate"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"> <button type="submit" class="btn btn-primary">Save Changes</button></td>
+            </tr>
+
+        </table>
+
+
+
+    </form>
+
+    <form asp-action="UploadDocument" enctype="multipart/form-data" method="post">
+        <table class="table w-100 table-striped table-hover table-reflow bg-dark mx-5" style="opacity: 0.5;">
+            <tr>
+                <td>
+                    <input type="hidden" asp-for="DocumentID" />
+                    <label asp-for="DocFileName">Upload Document</label>
+                </td>
+                <td><input type="file" class="form-control-file" id="DocFileName" asp-for="DocFileName" /></td>
+                <td>
+                    <button type="submit" class="btn btn-primary">
+                        Upload
+                    </button>
+    </form>
+    </td>
+
+    <td>
+        <form asp-action="DownloadDocument" enctype="multipart/form-data" method="post">
+            <input type="hidden" asp-for="DocumentID" />
+            <button type="submit" class="btn btn-primary">
+                Download
+            </button>
+        </form>
+    </td>
+    </tr>
+    </table>
+
+
+    <form form asp-action="UploadAttachment" enctype="multipart/form-data" method="post">
+        <table class="table w-100 table-striped table-hover table-reflow bg-dark mx-5" style="opacity: 0.5;">
+            <tr>
+                <td>
+                    <input type="hidden" asp-for="DocumentID" />
+                    <label asp-for="AttachmentFileName"> Upload Attachment</label>
+                </td>
+                <td><input type="file" class="form-control-file" enctype="multipart/form-data" asp-for="AttachmentFileName" /></td>
+                <td>
+                    <button type="submit" class="btn btn-primary">
+                        Upload
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script type="text/javascript">
+        // When the document is ready
+        $(document).ready(function () {
+
+            $('#ReviewDate').datepicker({
+                format: "dd/mm/yyyy"
+            });
+
+            $('#SignoffDate').datepicker({
+                format: "dd/mm/yyyy"
+            });
+
+            $('#CheckOutDate').datepicker({
+                format: "dd/mm/yyyy"
+            });
+        });
+    </script>
+</div>

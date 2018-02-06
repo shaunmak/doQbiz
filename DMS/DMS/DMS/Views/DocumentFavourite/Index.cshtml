@@ -1,0 +1,75 @@
+﻿@model IEnumerable<DMS.Models.DocUserList>
+
+@{
+
+    Layout ="_layout";
+
+}
+
+
+    <h2>Documents for @User.Identity.Name </h2>
+<div class="w-100 container-fluid py-1 bg-primary border border-secondary d-inline-flex">
+    <table class="table w-100 table-striped table-hover table-reflow bg-dark mx-5" style="opacity: 0.5;">
+        <thead>
+            <tr>
+                <!-- TO DO Replace with proper headings as we don't need the database field names here. - Gavin 08-01-2018 -->
+                <th width="10%">
+                    @Html.DisplayNameFor(model => model.DocumentNo)
+                </th>
+                <th width="15%">
+                    @Html.DisplayNameFor(model => model.ProjectNo)
+                </th>
+                <th width="30%">
+                    @Html.DisplayNameFor(model => model.DocumentTitle)
+                </th>
+                <th width="5%">
+                    @Html.DisplayNameFor(model => model.CurrentRev)
+                </th>
+                <th width="10%">
+                    @Html.DisplayNameFor(model => model.DocumentStatus)
+                </th>
+                <th width="15%">
+                    @Html.DisplayNameFor(model => model.LastUpdateBy)
+                </th>
+                <th width="15%">
+                    @Html.DisplayNameFor(model => model.LastUpdate)
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            
+            @foreach (var item in Model)
+            {
+                <TR>
+                    <td class="border border-light">
+                        @Html.ActionLink(item.DocumentNo, "EditDocument", "Document", new { DocumentID = item.DocumentID }, new { @class = "btn btn-primary" })
+                        @*@Html.DisplayFor(modelItem => item.DocumentNo)*@
+                    </td>
+                    <td class="border border-light">
+                        @Html.DisplayFor(modelItem => item.ProjectNo)
+                    </td>
+                    <td class="border border-light">
+                        @Html.DisplayFor(modelItem => item.DocumentTitle)
+                    </td>
+
+                    <td class="border border-light">
+                        @Html.DisplayFor(modelItem => item.CurrentRev)
+                    </td>
+                    <td class="border border-light">
+                        @Html.DisplayFor(modelItem => item.DocumentStatus)
+                    </td>
+                    <td class="border border-light">
+                        @Html.DisplayFor(modelItem => item.LastUpdateBy)
+                    </td>
+                    <td class="border border-light">
+                        @Html.DisplayFor(modelItem => item.LastUpdate)
+                    </td>
+
+                </TR>
+            }
+
+        </tbody>
+    </table>
+
+</div>

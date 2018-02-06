@@ -1,0 +1,79 @@
+﻿@model DMS.Models.ViewModel.AddDocumentListing
+@{
+
+        Layout = "_Layout";
+
+    }
+
+
+<div class="col-md-4">
+
+
+    <form asp-action="AddDocument" method="post">
+        <table class="table w-100 table-striped table-hover table-reflow bg-dark mx-5" style="opacity: 0.5;">
+            <TR>
+                <td>
+                    <label asp-for="ProjectNo">Project No</label>
+                </td>
+                <td>
+                    <select asp-for="ProjectID" asp-items="@(new SelectList(@ViewBag.ProjectDropdownItems, "ProjectID", "ProjectNo"))"></select>
+                </td>
+            </TR>
+
+            @* @Html.DropDownListFor (m => @Model.GetDropdownList.ProjectID, @Model.GetDropdownList, "Select a Project", new { class = "form-control" })*@
+</div>
+
+        <TR>
+            <td>
+
+                <label asp-for="DocumentType">Document Type</label>
+            </td>
+            <td>
+                <select asp-for="DocumentTypeID" asp-items="@(new SelectList(@ViewBag.DocumentTypeDropdownItems, "DocumentTypeID", "DocumentDropdownText"))"></select>
+            </td>
+            </TR>
+        <tr>
+            <td>
+
+
+            <label asp-for="StatusDesc">Document Status</label>
+            <td>
+            <select asp-for="DocumentStatusID" asp-items="@(new SelectList(@ViewBag.DocumentStatusDropdownItems, "DocumentStatusID", "StatusDesc"))"></select>
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+
+
+                <label asp-for="DocumentTitle">Document Title</label>
+            <td>
+                <input asp-for="DocumentTitle">
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <label asp-for="CurrentRev">Current Rev</label>
+            <td>
+                <input asp-for="CurrentRev">
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>
+                <label asp-for="UserID">Originator</label>
+            <td>
+                <input asp-for="UserID" value="@User.Identity.Name">
+            </td>
+
+        </tr>
+<tr>
+            <td colspan="2" align="center"> <button type="submit" class="btn btn-primary">Add Document</button></td>
+        </tr>
+
+    </table>
+</form>
+
+</div>

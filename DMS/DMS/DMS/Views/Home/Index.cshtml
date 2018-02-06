@@ -1,0 +1,92 @@
+﻿@model IEnumerable<DMS.Models.ProjectFavourite>
+
+    @{
+
+        Layout = "_Layout";
+
+    }
+    <p> This is the new home page</p>
+    <table class="table w-100 table-striped table-hover table-reflow bg-dark mx-5" style="opacity: 0.5;">
+        <TR>
+            <td>
+                <label name="ProjectNo">Project No</label>
+            </td>
+            <td>
+                <select name="ProjectID" asp-items="@(new SelectList(@ViewBag.ProjectDropdownItems, "ProjectID", "ProjectNo"))"></select>
+            </td>
+        </TR>
+    </table>
+
+    <h2>Favourite projects for @User.Identity.Name </h2>
+
+
+    @{ 
+
+        if (@Model.Count() > 0)
+        {
+            <div class="w-100 container-fluid py-1 bg-primary border border-secondary d-inline-flex">
+                <table class="table w-100 table-striped table-hover table-reflow bg-dark mx-5" style="opacity: 0.5;">
+                    <thead>
+                        <tr>
+                            <!-- TO DO Replace with proper headings as we don't need the database field names here. - Gavin 08-01-2018 -->
+                            <th width="10%">
+
+                                @Html.DisplayNameFor(model => model.ProjectNo)
+                            </th>
+                            <th width="30%">
+                                @Html.DisplayNameFor(model => model.ProjectDesc)
+                            </th>
+                            <th width="5%">
+                                @Html.DisplayNameFor(model => model.ProjectManager)
+                            </th>
+                            <th width="10%">
+                                @Html.DisplayNameFor(model => model.ProjectStatusDesc)
+                            </th>
+                            <th width="15%"> Toggle Favourite
+                            </th>
+                            <th width="15%"> Project Status Report
+                       
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            <TR>
+                                <td class="border border-light">
+                                    @Html.ActionLink(item.ProjectNo, "ProjectListing", "Home", new { ProjectID = item.ProjectID }, new { @class = "btn btn-primary" })
+                                    @*@Html.DisplayFor(modelItem => item.DocumentNo)*@
+                                </td>
+                                <td class="border border-light">
+                                    @Html.DisplayFor(modelItem => item.ProjectDesc)
+                                </td>
+
+                                <td class="border border-light">
+                                    @Html.DisplayFor(modelItem => item.ProjectManager)
+                                </td>
+                                <td class="border border-light">
+                                    @Html.DisplayFor(modelItem => item.ProjectStatusDesc)
+                                </td>
+                                <td class="border border-light" align="center">
+                                   <i class="fa fa-heart"  style="color:pink"></i>  
+                                </td>
+                                <td class="border border-light" align="center">
+                                   <i class="fa fa-folder" style="color:deepskyblue"></i>
+                                </td>
+
+                            </TR>
+                        }
+
+                    </tbody>
+                </table>
+
+            </div>
+        }
+        else
+        {
+            <h2> No project favourites have been set for you yet.  To select a new favourite project choose a project from the dropdown list above and select the project as a favourite from the project listing screen.</h2>
+
+        }
+   }

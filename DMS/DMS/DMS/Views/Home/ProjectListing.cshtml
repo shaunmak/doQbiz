@@ -1,0 +1,120 @@
+﻿@model IEnumerable<DMS.Models.ProjectListing>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+
+    Layout = "_layout";
+    var strProjectNo = "FirstTimeThrough";
+    var strDocumentType = "FirstTimeThrough";
+}
+
+
+
+<h2> Project Listing </h2>
+
+@foreach (var item in @Model)
+{
+    if (strProjectNo == "FirstTimeThrough")
+    {
+        <h2>Project No is @item.ProjectNo.ToString()</h2>
+        strProjectNo = item.ProjectNo.ToString();
+    }
+
+
+
+
+    @if (strDocumentType != item.DocumentType.ToString())
+    {
+        strDocumentType = item.DocumentType.ToString();
+
+        if (strDocumentType != "FirstTimeThrough")
+        {
+            @:</ul>
+            @:</div>
+            @:</div>
+
+        }
+
+
+        @:<div class="panel-heading">
+            @:  <h4 class="panel-title">
+                @:     <a data-toggle="collapse" data-parent="#level1-accordion" href="#plast@(item.DocumentType)" class="collapsed">
+                    @:         <span class="accordian-arrow">
+                        @:             <i class="fa fa-minus-square-o" aria-hidden="true"></i>
+                        @:             <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+                        @:     </span>
+                    @item.DocumentType;
+                    @:  </a>
+                @: </h4>
+            @:</div>
+        @:<div id="plast@(item.DocumentType)" class="panel-collapse collapse">
+            @: <div class="panel-body">
+                @:       <ul class="list-unstyled">
+
+    }
+
+    <li>
+        <div class="table">
+            @*<label>*@
+            @*<input type="checkbox">*@
+            <Table border="0">
+                <TR BORDER="0">
+                    <TD width="5%">&nbsp;</TD>
+                    <TD width="15%">@Html.ActionLink(item.DocumentNo, "EditDocument", "Document", new { DocumentID = item.DocumentID }, new { @class = "btn btn-primary" })</TD>
+                    <td width="40%">@item.DocumentTitle</td>
+                    <TD>@(item.CheckOutBy == null ? "" : item.CheckOutBy)</TD>
+
+                    <td width="15%">@item.DocumentStatus</td>
+                    <td width="5%">@item.CurrentRev</td>
+                    <td width="10%">@item.Originator</td>
+                </TR>
+            </Table>
+            @*</label>*@
+        </div>
+    </li>
+
+}
+
+
+
+@*<!-- Here we insert another nested accordion -->
+
+<div class="panel-group" id="accordion2">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="panel-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseInnerOne">
+                    Collapsible Inner Group Item #1
+                </a>
+            </h4>
+        </div>
+        <div id="collapseInnerOne" class="panel-body collapse">
+            <div class="panel-inner">
+                Anim pariatur cliche...
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="panel-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseInnerTwo">
+                    Collapsible Inner Group Item #2
+                </a>
+            </h4>
+        </div>
+        <div id="collapseInnerTwo" class="panel-body collapse">
+            <div class="panel-inner">
+                Anim pariatur cliche...
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Inner accordion ends here -->
+
+</div>
+</div>
+            </div>
+        </div>*@

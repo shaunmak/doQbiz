@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="../theme.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>doQbiz - Document Detail/Edit</title>
+  <meta name="description" content="doQbiz database interface">
+  <meta name="keywords" content="Document management; Document control">
+  <link rel="stylesheet" href="theme.css"> </head>
+
+<body>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="C:\Shaun\Source\Repos\DMS_Vertech\Wireframe - VS2017/theme.css">
+  <!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">-->
+  <link rel="stylesheet" href="../../../css/font-awesome.min.css" type="text/css">
+  <title>doQbiz Document Management System - Document Listing</title>
+  <meta name="description" content="doQbiz Document Management System - Document Listing">
+  <meta name="keywords" content="doQbiz Document Management System - Document Listing">
+  <link rel="stylesheet" href="../../../theme.css">
+  <!---------------- START OF HEADER ------------------------------------------------------------------------------->
+  <nav class="navbar navbar-expand-md bg-primary navbar-dark">
+    <a class="navbar-brand" href="#">doQbiz </a> <cite class="nav-item text-muted">Simply Genius </cite>
+    <div class="container">
+      <ul class="nav nav-pills w-75">
+        <li class="nav-item">
+          <a href="Index.html" class="active nav-link"> <i class="fa fa-home"></i>&nbsp;Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="NewDocument.html" class="nav-link"><i class="fa fa-plus-circle"></i>New Registration</a>
+        </li>
+      </ul>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
+        <a class="nav-link" href="#"><i class="fa d-inline fa-lg fa-question-circle-o"></i> About</a>
+        <a class="nav-link text-muted">Logged in as: Shaun Makings</a>
+      </div>
+    </div>
+  </nav>
+  <div class="text-center photo-overlay" style="background-image: url(&quot;assets/app/Keyboard_strip.jpg&quot;);">
+    <div class="container py-3">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="display-4 mb-0">Document Detail / Edit</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p class="text-light text-center">Maintain your document metadata; check your document out so no one can edit it; download your document to work on offline; upload your revised document as a new revision.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-secondary"> </div>
+  <nav class="navbar navbar-expand-md navbar-dark bg-danger">
+    <a class="navbar-brand"><small>DEMO01-PIPE-ISO-0001 RevB</small></a>
+    <div class="container">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav text-nowrap">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="DocumentDownload.html"><i class="fa fa-arrow-circle-down"></i> Checkout and download</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="DocumentUpload.html"><i class="fa fa-arrow-circle-up"></i> Check in</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-muted" href="#"><i class="fa fa-plus"></i> Clone to New Rev</a>
+          </li>
+          <li class="nav-item"> </li>
+          <li class="nav-item">
+            <a class="nav-link text-muted" href="#"><i class="fa fa-files-o"></i> Clone to New Document</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <a class="navbar-brand"> Originator: </a>
+    <button class="btn dropdown-toggle btn-light text-dark text-left" data-toggle="dropdown"> Shaun Makings &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Shaun Makings</a>
+      <a class="dropdown-item" href="#">Gavin Savage</a>
+    </div>
+  </nav>
+  <!---------------- END OF HEADER ------------------------------------------------------------------------------->
+  <div class="py-0 bg-primary">
+    <div class="container py-1">
+      <div class="row">
+        <div class="col-12">
+          <h2>Document metadata <sup class="text-warning"><small>&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;* This document is curently checked out to Shaun Makings</small></sup></h2>
+          <hr> </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="btn-group w-75 m-1">
+            <button class="btn dropdown-toggle text-left btn-light text-muted" data-toggle="dropdown"> DEMO01 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ; &nbsp; </button>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <p class="text-white text-nowrap w-100">Project number is used to define the document number and cannot be edited for existing documents</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="btn-group w-75 m-1">
+            <button class="btn dropdown-toggle btn-light text-left text-muted" data-toggle="dropdown"> PIPE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </button>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <p class="w-75 text-white text-nowrap">Discipline is used to define the document number and cannot be edited for existing documents</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3" style="transition: all 0.25s;">
+          <div class="btn-group w-75 m-1">
+            <button class="btn dropdown-toggle btn-light text-left text-muted" data-toggle="dropdown"> ISO &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </button>
+          </div>
+        </div>
+        <div class="col-md-9" style="transition: all 0.25s;">
+          <p class="w-75 text-white text-nowrap">Document Type is used to define the document number and cannot be edited for existing documents</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="btn-group w-75 m-1">
+            <button class="btn dropdown-toggle btn-light text-dark text-left" data-toggle="dropdown"> Draft &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Draft</a>
+              <a class="dropdown-item" href="#">Issued for Review</a>
+              <a class="dropdown-item" href="#">Issued for Use</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-7"> </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12"> </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <form class="form-inline mx-1 py-1" method="post" action="#">
+            <input type="text" name="DocumentTitle" class="form-control w-100" placeholder="Document Title" value="Demo Project 01 - Isometric 0001"> </form>
+        </div>
+      </div>
+      <div class="row btn">
+        <div class="col-sm-3 w-100 col-md-3 p-1">
+          <form class="form-inline py-1 m-0" method="post" action="#">
+            <input type="text" name="Tag1" class="form-control w-100 px-1" placeholder="Tag#1" value="JCX042"> </form>
+        </div>
+        <div class="col-sm-3 p-1">
+          <form class="form-inline mx-1 py-1" method="post" action="#">
+            <input type="text" name="Tag2" class="form-control w-100" placeholder="Tag#2" value="WP004"> </form>
+        </div>
+        <div class="col-sm-3 p-1">
+          <form class="form-inline mx-1 py-1" method="post" action="#">
+            <input type="text" name="Tag3" class="form-control w-100" placeholder="Add new tag"> </form>
+        </div>
+        <div class="">
+          <a class="nav-link text-white" href=""><i class="fa fa-plus-square fa-2x navbar"> </i> </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <form class="form-inline mx-1" method="post" action="#">
+            <input type="text" name="ClientRef" placeholder="Client Reference" class="form-control my-1">
+            <div class="col-md-8"> </div>
+            <button type="submit" class="btn btn-secondary border border-dark">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-md border border-danger navbar-light bg-danger">
+    <div class="container">
+      <h4 class="nav-item text-nowrap w-100 px-5 my-1">DEMO01-PIPE-ISO-0001 Revision History</h4>
+      <p class="w-75 text-white text-nowrap my-1">Only the selected Revision is shown above</p>
+    </div>
+  </nav>
+  <div class="py-1 w-100">
+    <div class="w-100 container-fluid">
+      <div class="row w-100 justify-content-center">
+        <div class="">
+          <table class="table w-100 table-striped table-hover table-reflow bg-dark mx-5" style="opacity: 0.5;">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Document #</th>
+                <th>Rev</th>
+                <th>Status</th>
+                <th>Updated by</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border border-light"><i class="fa fa-caret-right fa-lg"></i></td>
+                <td class="border border-light">
+                  <a class="nav-link p-0 text-light" href="#">DEMO01-PIPE-ISO-0001</a>
+                </td>
+                <td class="border border-light">B</td>
+                <td class="border border-light">Draft - Checked out</td>
+                <td class="border border-light">Shaun Makings</td>
+                <td class="border border-light">01-Dec-2017</td>
+              </tr>
+              <tr>
+                <td class="border border-light"></td>
+                <td class="border border-light">
+                  <a class="nav-link p-0 text-light" href="#">DEMO01-PIPE-ISO-0001</a>
+                </td>
+                <td class="border border-light">A</td>
+                <td class="border border-light">Draft</td>
+                <td class="border border-light">Shaun Makings</td>
+                <td class="border border-light">27-Nov-2017</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="bg-dark text-white py-1">
+      <div class="container">
+        <div class="my-3 row">
+          <div class="col-4">
+            <a href="https://www.facebook.com" target="_blank"><i class="fa fa-3x fa-facebook"></i></a>
+          </div>
+          <div class="col-4">
+            <a href="https://twitter.com" target="_blank"><i class="fa fa-3x fa-twitter"></i></a>
+          </div>
+          <div class="col-4">
+            <a href="https://www.instagram.com" target="_blank"><i class="fa fa-3x fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="my-3 row">
+          <div class="col-4">
+            <a href="https://www.facebook.com" target="_blank">2017 Syn3rg Systems</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 10px;right:10px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:110px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">made with&nbsp;&nbsp;
+      <img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16">
+    </pingendo>
+  </div>
+</body>
+
+</html>

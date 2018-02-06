@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/tether/dist/js/tether.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/lib/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
+
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-slate.css" />
+    <link rel="stylesheet" href="~/lib/fontawesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap-datepicker/dist/css/bootstrap-datepicker.standalone.css" />
+    @*<link rel="stylesheet" href="/lib/bootstrap/dist/css/Theme.css" />*@
+    
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+
+     <nav class="navbar navbar-expand-md bg-primary navbar-dark">
+    <a class="navbar-brand" href="#">doQbiz</a> 
+    <div class="container">
+      <ul class="nav nav-pills w-75">
+        <li class="nav-item">
+            <a href="@Url.Action("Index", "Home")" class="active nav-link"> <i class="fa fa-home fa-home"></i>&nbsp;Home</a>
+        </li>
+        <li class="nav-item">
+            <a href="@Url.Action("AddDocument", "Document")" class="active nav-link"><i class="fa fa-plus"></i>&nbsp;New Document</a>
+        </li>
+        <li class="nav-item">
+              <a href="@Url.Action("ProjectListingAll", "Home")" class="active nav-link"><i class="fa fa-plus"></i>&nbsp;Project Listing</a>
+          </li>
+          <li class="nav-item">
+              <a href="@Url.Action("Index", "DocumentFavourite")" class="active nav-link"><i class="fa fa-plus"></i>&nbsp;Favourite Documents</a>
+          </li>
+        <li class="nav-item" >
+            <a href="@Url.Action("Reports", "Reports")" class="nav-link" ><i class="fa fa-trello"></i>&nbsp;Reports</a>
+        </li>
+      </ul>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
+        <i class="fa d-inline fa-lg fa-question-circle-o"></i>@User.Identity.Name
+      </div>
+    </div>
+  </nav>
+  <div class="text-center photo-overlay" style="background-image: url(&quot;assets/app/paper-1559010_960_720.jpg&quot;);">
+    <div class="container py-4">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="display-4 mb-0">@ViewBag.PageTitle</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p class="text-light text-nowrap">@ViewBag.DocumentBlurb</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-md navbar-dark w-100 bg-danger">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Document search</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="btn-group border border-info">
+          <button class="btn dropdown-toggle btn-secondary text-white" data-toggle="dropdown"> Project </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item text-dark" href="#">DEMO01 Demo Project 01</a>
+            <a class="dropdown-item text-dark" href="#">DEMO02 Demo Project 02</a>
+            <a class="dropdown-item text-dark" href="#">DEMO03 Demo Project 03</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item text-dark" href="#">-Create new Project-</a>
+          </div>
+        </div>
+        <div class="btn-group border border-info">
+          <button class="btn dropdown-toggle btn-secondary text-white" data-toggle="dropdown"> Discipline </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item text-dark" href="#">Accounting</a>
+            <a class="dropdown-item text-dark" href="#">Engineer</a>
+            <a class="dropdown-item text-dark" href="#">Inspector</a>
+            <a class="dropdown-item text-dark" href="#">Project Management</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item text-dark" href="#">-Create new Discipline-</a>
+          </div>
+        </div>
+        <div class="btn-group border border-info">
+          <button class="btn dropdown-toggle btn-secondary text-white" data-toggle="dropdown"> Document Type </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item text-dark" href="#">BOD - Basis of Design</a>
+            <a class="dropdown-item text-dark" href="#">CRQ - Change Request</a>
+            <a class="dropdown-item text-dark" href="#">ISO - Isometric drawing</a>
+            <a class="dropdown-item text-dark" href="#">MPP - Presentation</a>
+            <a class="dropdown-item text-dark" href="#">REG - Register</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item text-dark" href="#">-Create new Document Type-</a>
+          </div>
+        </div>
+        <div class="btn-group border border-info">
+          <button class="btn dropdown-toggle btn-secondary text-white" data-toggle="dropdown"> Status </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item text-dark" href="#">Draft</a>
+            <a class="dropdown-item text-dark" href="#">Issued for review</a>
+            <a class="dropdown-item text-dark" href="#">Issued for use</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item text-dark" href="#">-Create new Status-</a>
+          </div>
+        </div>
+        <div class="btn-group border border-info">
+          <button class="btn dropdown-toggle btn-secondary text-white" data-toggle="dropdown"> Originator </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item text-dark" href="#">Brenton Jenke</a>
+            <a class="dropdown-item text-dark" href="#">Gavin Savage</a>
+            <a class="dropdown-item text-dark" href="#">Shaun Makings</a>
+          </div>
+        </div>
+        <form class="form-inline m-0 w-100">
+          <input class="form-control mr-2 ml-auto form-control-sm w-50 px-1 text-nowrap" type="search" placeholder="Document number (or part thereof) &nbsp;">
+          <button class="btn btn-secondary" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+
+    <div>
+        @RenderBody()
+    </div>
+
+</body>
+</html>
+
+

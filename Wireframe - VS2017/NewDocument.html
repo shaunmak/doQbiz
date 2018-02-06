@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="../theme.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>doQbiz - Register New Document</title>
+  <meta name="description" content="doQbiz database interface">
+  <meta name="keywords" content="Document management; Document control">
+  <link rel="stylesheet" href="theme.css"> </head>
+
+<body>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="C:\Shaun\Source\Repos\DMS_Vertech\Wireframe - VS2017/theme.css">
+  <!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">-->
+  <link rel="stylesheet" href="../../../css/font-awesome.min.css" type="text/css">
+  <title>doQbiz Document Management System - Document Listing</title>
+  <meta name="description" content="doQbiz Document Management System - Document Listing">
+  <meta name="keywords" content="doQbiz Document Management System - Document Listing">
+  <link rel="stylesheet" href="../../../theme.css">
+  <!---------------- START OF HEADER ------------------------------------------------------------------------------->
+  <nav class="navbar navbar-expand-md bg-primary navbar-dark">
+    <a class="navbar-brand" href="#">doQbiz </a> <cite class="nav-item text-muted">Simply Genius </cite>
+    <div class="container">
+      <ul class="nav nav-pills w-75">
+        <li class="nav-item">
+          <a href="Index.html" class="active nav-link"> <i class="fa fa-home"></i>&nbsp;Home</a>
+        </li>
+      </ul>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
+        <a class="nav-link" href="#"><i class="fa d-inline fa-lg fa-question-circle-o"></i> About</a>
+        <a class="nav-link text-muted">Logged in as: Shaun Makings</a>
+      </div>
+    </div>
+  </nav>
+  <div class="text-center photo-overlay" style="background-image: url(&quot;C:/Shaun/Source/Repos/DMS_Vertech/Wireframe - VS2017/assets/app/calendar-2052492_960_720.jpg&quot;);">
+    <div class="container py-3">
+      <div class="container photo-overlay">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="display-4 mb-0">Register New Document</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <p class="text-light text-center">Maintain your document metadata; check your document out so no one can edit it; download your document to work on offline; upload your revised document as a new revision.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-secondary"> </div>
+  <nav class="navbar navbar-expand-md navbar-dark bg-danger">
+    <a class="navbar-brand"><small>Document Number: [Project]-[Discipline]-[Document Type]-[<small>The next seq # will be added when you click submit</small>]</small>
+    </a>
+    <div class="container">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav text-nowrap">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="DocumentDownload.html"><i class="fa fa-arrow-circle-down"></i> Checkout and download</a>
+          </li>
+          <li class="nav-item"> </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#"><i class="fa fa-files-o"></i> Clone to New Document</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Shaun Makings</a>
+      <a class="dropdown-item" href="#">Gavin Savage</a>
+    </div>
+  </nav>
+  <!---------------- END OF HEADER ------------------------------------------------------------------------------->
+  <div class="py-0 bg-primary">
+    <div class="container py-1">
+      <div class="row">
+        <div class="col-12">
+          <h2>Document metadata</h2>
+          <hr> </div>
+      </div>
+      <div class="row p-1">
+        <div class="col-md-3">
+          <div class="btn-group w-75 m-1">
+            <button class="btn dropdown-toggle btn-light text-dark text-left" data-toggle="dropdown"> Project &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">DEMO01</a>
+              <a class="dropdown-item" href="#">DEMO02</a>
+              <a class="dropdown-item" href="#">DEMO03</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Create new Project</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <p class="text-white w-100 text-nowrap">Project number is used to define the document number and cannot be edited for existing documents</p>
+        </div>
+      </div>
+      <div class="row p-1">
+        <div class="col-md-3">
+          <div class="btn-group w-75 m-1">
+            <button class="btn dropdown-toggle btn-light text-dark text-left" data-toggle="dropdown"> Discipline &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">INSP - Inspectors</a>
+              <a class="dropdown-item" href="#">PM - Project Managers</a>
+              <a class="dropdown-item" href="#">SCAF - Scaffolders</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">New Discipline</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <p class="w-75 text-white text-nowrap">Discipline is used to define the document number and cannot be edited for existing documents</p>
+        </div>
+      </div>
+      <div class="row p-1">
+        <div class="col-md-3" style="transition: all 0.25s;">
+          <div class="btn-group w-75 m-1">
+            <button class="btn dropdown-toggle btn-light text-dark text-left" data-toggle="dropdown"> Document Type &nbsp; &nbsp; &nbsp; &nbsp; </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">BOD - Basis of Design</a>
+              <a class="dropdown-item" href="#">CRQ - Change Request</a>
+              <a class="dropdown-item" href="#">ISO - Isometric</a>
+              <a class="dropdown-item" href="#">MOM - Minutes of Meeting</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">New Document Type</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-9" style="transition: all 0.25s;">
+          <p class="w-75 text-white text-nowrap">Document Type is used to define the document number and cannot be edited for existing documents</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 p-1">
+          <div class="btn-group btn">
+            <button class="btn dropdown-toggle btn-light text-dark text-left" data-toggle="dropdown"> Status &nbsp; &nbsp; &nbsp; &nbsp; </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Draft</a>
+              <a class="dropdown-item" href="#">Issued for Review</a>
+              <a class="dropdown-item" href="#">Issued for Use</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-7"> </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 w-100 p-1">
+          <form class="form-inline btn" method="post" action="#">
+            <input type="text" name="DocumentTitle" class="form-control w-100" placeholder="Document Title"> </form>
+        </div>
+      </div>
+      <div class="row btn p-1">
+        <div class="btn-group">
+          <a class="nav-link text-white" href="DocumentDownload.html">
+            <button class="btn dropdown-toggle btn-light text-dark text-left" data-toggle="dropdown"> Originator &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; </button>
+          </a>
+          <div class="dropdown-menu">
+            <a class="nav-link text-white" href="DocumentDownload.html"> </a>
+            <a class="dropdown-item" href="#">Shaun Makings</a>
+            <a class="dropdown-item" href="#">Gavin Savage</a>
+            <a class="dropdown-item" href="#">Matt Tiller</a>
+          </div>
+          <div class="col-md-9">
+            <p class="text-white w-100 text-nowrap">Originator defaults to current user, but can be changed here</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <form class="form-inline p-1" method="post" action="#">
+            <input type="text" name="ClientRef" class="form-control my-1" placeholder="Client Reference">
+            <div class="col-md-8"> </div>
+            <button type="submit" class="btn btn-secondary border border-dark">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-1 w-100">
+    <div class="bg-dark text-white py-1">
+      <div class="container">
+        <div class="my-3 row">
+          <div class="col-4">
+            <a href="https://www.facebook.com" target="_blank"><i class="fa fa-3x fa-facebook"></i></a>
+          </div>
+          <div class="col-4">
+            <a href="https://twitter.com" target="_blank"><i class="fa fa-3x fa-twitter"></i></a>
+          </div>
+          <div class="col-4">
+            <a href="https://www.instagram.com" target="_blank"><i class="fa fa-3x fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="my-3 row">
+          <div class="col-4">
+            <a href="https://www.facebook.com" target="_blank">2017 Syn3rg Systems</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 10px;right:10px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:110px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">made with&nbsp;&nbsp;
+      <img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16">
+    </pingendo>
+  </div>
+</body>
+
+</html>
